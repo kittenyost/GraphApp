@@ -10,11 +10,23 @@
             Label = lbl;
         }
 
-        public void AddEdge(Vertex child, int weight)
+       public Vertex AddEdge(Vertex child, int weight)
         {
-            Edge edge = new Edge { Parent = this, Child = child, Weight = weight };
+            Edges.Add(new Edge {
+                Parent = this,
+                Child = child,
+                Weight = weight
+            });
 
-            Edges.Add(edge);
+            // do something here =
+            if (!Edges.Exists(e => e.Parent == child && e.Child == this))
+            {
+                //create here
+                
+                child.AddEdge(this, weight);
+            }
+            return this;
+           
         }
     }
 }
