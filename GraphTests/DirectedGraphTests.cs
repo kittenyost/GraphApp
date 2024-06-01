@@ -9,7 +9,7 @@ namespace GraphTests
         public void AddingAVertexToTheGraph_ShouldReturnAVertex()
         {
             // arrange
-            DirectedGraph graph = new DirectedGraph();
+            DirectedGraph graph = new();
 
             // Acted
             var result = graph.AddVertex("Toast");
@@ -24,7 +24,7 @@ namespace GraphTests
         public void AddingMoreThanOneNodeToTheGraph_ShouldRetainEachOfThem(string one, string two, string three)
         {
             // arrange
-            DirectedGraph graph = new DirectedGraph();
+            DirectedGraph graph = new();
 
             // act
             graph.AddVertex(one);
